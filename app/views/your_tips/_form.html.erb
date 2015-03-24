@@ -1,0 +1,25 @@
+<%= form_for(@your_tip) do |f| %>
+  <% if @your_tip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@your_tip.errors.count, "error") %> prohibited this your_tip from being saved:</h2>
+
+      <ul>
+      <% @your_tip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tip %><br>
+    <%= f.text_field :tip %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
