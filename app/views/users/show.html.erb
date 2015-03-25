@@ -1,2 +1,11 @@
 <h1>Welcome</h1>
 <%= current_user.first_name %>!
+
+	<div id="tips_wrapper">
+		<%= render @user.your_tips %>
+		
+		<div id="form">
+			<%= render "your_tips/form" %>
+		</div>
+	</div>
+
